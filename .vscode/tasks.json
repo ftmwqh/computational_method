@@ -1,0 +1,27 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "echo",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-g", 
+                "${file}", 
+                "-o", 
+                "${fileDirname}/${fileBasenameNoExtension}.exe",//这里添加上${fileDirname}就可以生成exe到当前文件目录
+                "-fexec-charset=GBK"//解决中文乱码
+            ]
+        }
+    ],
+    "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared", 
+        "showReuseMessage": true,
+        "clear": false
+    }
+}
